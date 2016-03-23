@@ -21,7 +21,7 @@ export class NewKegComponent {
   constructor() {
     this.onSubmitNewKeg = new EventEmitter();
   }
-  addKeg(userName: HTMLInputElement, userBrand: HTMLInputElement,       userPrice: HTMLInputElement, userAlcoholContent: HTMLInputElement) {
+  addKeg(userName: HTMLInputElement, userBrand: HTMLInputElement, userPrice: HTMLInputElement, userAlcoholContent: HTMLInputElement) {
     this.onSubmitNewKeg.emit([userName.value, userBrand.value, userPrice.value, userAlcoholContent.value]);
     userName.value = "";
     userBrand.value = "";

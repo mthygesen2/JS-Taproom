@@ -11,9 +11,7 @@ import { NewKegComponent } from './new-keg.component';
   template: `
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   <keg-display *ngFor="#currentKeg of kegList"
-    [keg]="currentKeg"
-    (click)="kegClicked(currentKeg)"
-  [class.selected]="currentKeg === selectedKeg">
+    [keg]="currentKeg">
   </keg-display>
   `
 })
@@ -24,14 +22,14 @@ export class KegListComponent {
   constructor() {
     this.onKegSelect = new EventEmitter();
   }
-  kegClicked(clickedKeg: Keg): void {
-    clickedKeg.pints -= 1;
-    this.selectedKeg = clickedKeg;
-    this.onKegSelect.emit(clickedKeg);
-  }
   createKeg([name, brand, price, alcoholContent]): void {
     this.kegList.push(
       new Keg(name, brand, price, alcoholContent, this.kegList.length)
     );
   }
 }
+
+
+
+// (click)="kegClicked(currentKeg)"
+// [class.selected]="currentKeg === selectedKeg">
