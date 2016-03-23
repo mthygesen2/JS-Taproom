@@ -1,3 +1,7 @@
 .selected {
   color: #22bdf0;
 }
+
+.foo {
+  background: red;
+}
