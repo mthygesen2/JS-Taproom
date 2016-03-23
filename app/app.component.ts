@@ -10,7 +10,8 @@ import {Keg} from './keg.model';
     <div class="container">
       <h1>Pint Me</h1>
       <keg-list
-        [kegList]="kegs">
+        [kegList]="kegs"
+        (onKegSelect)="kegWasSelected($event)">
       </keg-list>
     </div>
 
@@ -24,6 +25,8 @@ export class AppComponent {
       new Keg("Mirror Pond", "Deschutes", 4, 6),
       new Keg("Crush Cucumber Sour", "10 Barrel", 6.5, 5),
     ];
-    console.log(this.kegs);
+  }
+  kegWasSelected(clickedKeg: Keg): void {
+    console.log('parent', clickedKeg);
   }
 }
