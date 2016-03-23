@@ -24,5 +24,6 @@ export class AppComponent {
       new Keg("Mirror Pond", "Deschutes", 4, 6),
       new Keg("Crush Cucumber Sour", "10 Barrel", 6.5, 5),
     ];
+    console.log(this.kegs);
   }
 }
