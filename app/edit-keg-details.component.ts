@@ -6,13 +6,11 @@ import {Keg} from './keg.model';
   inputs: ['keg'],
   template: `
   <div class="keg-form">
-    <h3>New Keg</h3>
-    <input placeholder="Keg Name" #newName>
-    <input placeholder="Keg Brand" #newBrand>
-    <input type="number" placeholder="Price per pint" #newPrice>
-    <input type="number" placeholder="Alcohol Content" #newAlcoholContent>
-
-    <button (click)="addKeg(newName, newBrand, newPrice, newAlcoholContent)">Edit Keg</button>
+    <h3>Edit Keg</h3>
+    <input [(ngModel)]="keg.name" placeholder="Keg Name">
+    <input [(ngModel)]="keg.brand" placeholder="Keg Brand">
+    <input [(ngModel)]="keg.price" type="number" placeholder="Price per pint">
+    <input [(ngModel)]="keg.alcoholContent" type="number" placeholder="Alcohol Content">
   </div>
   `
 })

@@ -3,25 +3,30 @@ import { Keg } from './keg.model';
 import { KegComponent } from './keg.component';
 import { NewKegComponent } from './new-keg.component';
 import { EditKegDetailsComponent } from './edit-keg-details.component';
+import { EmptyPipe } from './empty.pipe';
 
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
+  pipes: [EmptyPipe],
   directives: [KegComponent, NewKegComponent, EditKegDetailsComponent],
   template: `
+  <select (change)="onChange($event.target.value)" class="filter">
+    <option value="all">Show All</option>
+    <option value="low">Show Low</option>
+  </select>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
-  <keg-display *ngFor="#currentKeg of kegList"
+  <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
     [keg]="currentKeg">
   </keg-display>
-  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
-  </edit-keg-details>
   `
 })
 export class KegListComponent {
   public kegList: Keg[];
   public onKegSelect: EventEmitter<Keg>;
   public selectedKeg: Keg;
+  public filterEmpty: string = "all";
   constructor() {
     this.onKegSelect = new EventEmitter();
   }
@@ -29,6 +34,9 @@ export class KegListComponent {
     this.kegList.push(
       new Keg(name, brand, price, alcoholContent, this.kegList.length)
     );
+  }
+  onChange(filterOption) {
+    this.filterEmpty = filterOption;
   }
 }
 
