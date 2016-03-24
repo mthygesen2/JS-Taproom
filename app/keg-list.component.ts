@@ -19,7 +19,7 @@ import { EmptyPipe } from './empty.pipe';
   </select>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
-    [keg]="currentKeg" [extraClass]="isExpensive(currentKeg)" >
+    [keg]="currentKeg" [priceyPintClass]="isExpensive(currentKeg)" [lowKegClass]="isLow(currentKeg)" >
   </keg-display>
   `
 })
@@ -43,7 +43,12 @@ export class KegListComponent {
   }
   isExpensive(currentKeg) {
     if(currentKeg.price > 5) {
-      return "colorme";
+      return "expensivePint";
+    }
+  }
+  isLow(currentKeg) {
+    if(currentKeg.pints <= 25) {
+      return "kegIsLow";
     }
   }
 }

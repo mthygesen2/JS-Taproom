@@ -6,7 +6,7 @@ import {Keg} from './keg.model';
   inputs: ['keg'],
   template: `
   <div class="keg-form">
-    <h3>Edit Keg</h3>
+    <h2>Edit Keg</h2>
     <input [(ngModel)]="keg.name" placeholder="Keg Name">
     <input [(ngModel)]="keg.brand" placeholder="Keg Brand">
     <input [(ngModel)]="keg.price" type="number" placeholder="Price per pint" min="0" step="0.25">

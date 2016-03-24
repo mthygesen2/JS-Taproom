@@ -5,15 +5,16 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
 
 @Component({
     selector: 'keg-display',
-    inputs: ['keg', 'extraClass'],
+    inputs: ['keg', 'priceyPintClass', 'lowKegClass'],
     outputs: ['onKegSelect'],
     directives: [EditKegDetailsComponent],
     template: `
-    <div class="kegInfo {{ extraClass }}"  [class.foo]="isClassVisible">
-    <h3>{{ keg.name + " " + "Pints: " + keg.pints + " " + "$" + keg.price}}</h3>
+    <div class="kegInfo {{ priceyPintClass }} ">
+    <h3>{{ keg.name + " " + "$" + keg.price}}</h3>
+    <p class="pintInfo {{ lowKegClass }} ">{{ "Pints: " + keg.pints  }}</p>
     <h4>{{ keg.brand }}</h4>
     <p>{{ "ABV " + keg.alcoholContent + "%" }}</p>
-    <button (click)="buyPint(keg, isClassVisible=true) ">Buy a pint!</button>
+    <button (click)="buyPint(keg) ">Buy a pint!</button>
     <button (click)="editInfo(keg)">Edit</button>
     <edit-keg-details *ngIf="show" [keg]="selectedKeg"></edit-keg-details>
     </div>
@@ -28,22 +29,13 @@ export class KegComponent {
     this.onKegSelect = new EventEmitter();
   }
 
-  buyPint(clickedKeg: Keg, isClassVisible) {
-
-    isClassVisible = true;
+  buyPint(clickedKeg: Keg): void{
     if(clickedKeg.pints <= 0) {
       clickedKeg.pints === 0;
     } else {
       clickedKeg.pints -= 1;
-    }
-    // isClassVisible= false;
-    // if (clickedKeg.pints <= 120) {
-    //     isClassVisible = true;
-    // }
-
-    console.log(isClassVisible);
-    return clickedKeg;
   }
+}
   editInfo(clickedKeg: Keg) :void {
     this.show = !this.show;
     console.log(this.selectedKeg);
