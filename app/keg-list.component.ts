@@ -15,6 +15,7 @@ import { EmptyPipe } from './empty.pipe';
   <select (change)="onChange($event.target.value)" class="filter">
     <option value="all">Show All</option>
     <option value="low">Show Low</option>
+    <option value="empty">Show Empty</option>
   </select>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
