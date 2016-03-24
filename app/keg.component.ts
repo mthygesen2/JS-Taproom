@@ -28,9 +28,13 @@ export class KegComponent {
     this.onKegSelect = new EventEmitter();
   }
   buyPint(clickedKeg: Keg, isClassVisible) {
-    clickedKeg.pints -= 1;
-    isClassVisible = true;
 
+    isClassVisible = true;
+    if(clickedKeg.pints <= 0) {
+      clickedKeg.pints === 0;
+    } else {
+      clickedKeg.pints -= 1;
+    }
     // isClassVisible= false;
     // if (clickedKeg.pints <= 120) {
     //     isClassVisible = true;
