@@ -5,12 +5,12 @@ import {Keg} from './keg.model';
   selector: 'new-keg',
   outputs: ['onSubmitNewKeg'],
   template: `
-  <div class="keg-form">
+  <div class="keg-form" >
     <h3>New Keg</h3>
-    <input placeholder="Keg Name" #newName>
-    <input placeholder="Keg Brand" #newBrand>
-    <input type="number" placeholder="Price per pint" #newPrice>
-    <input type="number" placeholder="Alcohol Content" #newAlcoholContent>
+    <input placeholder="Name of the Beer" #newName >
+    <input placeholder="Beer Brand" #newBrand>
+    <input min="0" step="0.25" type="number" placeholder="Price per pint" #newPrice>
+    <input min="0" type="number" placeholder="Alcohol By Volume" #newAlcoholContent>
 
     <button (click)="addKeg(newName, newBrand, newPrice, newAlcoholContent)">Add Keg</button>
   </div>
@@ -22,6 +22,7 @@ export class NewKegComponent {
     this.onSubmitNewKeg = new EventEmitter();
   }
   addKeg(userName: HTMLInputElement, userBrand: HTMLInputElement, userPrice: HTMLInputElement, userAlcoholContent: HTMLInputElement) {
+
     this.onSubmitNewKeg.emit([userName.value, userBrand.value, userPrice.value, userAlcoholContent.value]);
     userName.value = "";
     userBrand.value = "";
@@ -29,3 +30,9 @@ export class NewKegComponent {
     userAlcoholContent.value = "";
   }
 }
+
+// var expensive = false;
+// if(userPrice.value >= 4) {
+//   expensive = true;
+//   console.log(expensive);
+// }

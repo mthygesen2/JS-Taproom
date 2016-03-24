@@ -10,7 +10,7 @@ export class EmptyPipe implements PipeTransform {
     var desiredEmptyState = args[0];
     if(desiredEmptyState === "low") {
       return input.filter((keg) => {
-        return (keg.pints <= 10) && (keg.pints !== 0);
+        return (keg.pints <= 25) && (keg.pints !== 0);
       });
     } else if (desiredEmptyState === "empty") {
       return input.filter((keg) => {
@@ -21,5 +21,5 @@ export class EmptyPipe implements PipeTransform {
           return (keg.pints > 0);
       });
     }
-  }   
+  }
 }

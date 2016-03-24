@@ -5,11 +5,11 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
 
 @Component({
     selector: 'keg-display',
-    inputs: ['keg'],
+    inputs: ['keg', 'extraClass'],
     outputs: ['onKegSelect'],
     directives: [EditKegDetailsComponent],
     template: `
-    <div class="kegInfo" [class.foo]="isClassVisible">
+    <div class="kegInfo {{ extraClass }}"  [class.foo]="isClassVisible">
     <h3>{{ keg.name + " " + "Pints: " + keg.pints + " " + "$" + keg.price}}</h3>
     <h4>{{ keg.brand }}</h4>
     <p>{{ "ABV " + keg.alcoholContent + "%" }}</p>
@@ -27,6 +27,7 @@ export class KegComponent {
   constructor() {
     this.onKegSelect = new EventEmitter();
   }
+
   buyPint(clickedKeg: Keg, isClassVisible) {
 
     isClassVisible = true;
@@ -49,8 +50,9 @@ export class KegComponent {
     this.selectedKeg = clickedKeg;
     // this.onKegSelect.emit(clickedKeg);
   }
+
 }
 
 // if clickedKeg.pints <= 120 {
-//   document.querySelector('.kegInfo').className += ' foo';
+//
 // }

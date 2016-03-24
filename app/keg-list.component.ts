@@ -19,7 +19,7 @@ import { EmptyPipe } from './empty.pipe';
   </select>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
-    [keg]="currentKeg">
+    [keg]="currentKeg" [extraClass]="isExpensive(currentKeg)" >
   </keg-display>
   `
 })
@@ -32,12 +32,19 @@ export class KegListComponent {
     this.onKegSelect = new EventEmitter();
   }
   createKeg([name, brand, price, alcoholContent]): void {
-    this.kegList.push(
-      new Keg(name, brand, price, alcoholContent, this.kegList.length)
-    );
+
+    var newKeg = new Keg(name, brand, price, alcoholContent, this.kegList.length);
+
+    this.kegList.push(newKeg);
+
   }
   onChange(filterOption) {
     this.filterEmpty = filterOption;
+  }
+  isExpensive(currentKeg) {
+    if(currentKeg.price > 5) {
+      return "colorme";
+    }
   }
 }
 
