@@ -26,8 +26,11 @@ export class AppComponent {
   constructor(){
     this.kegs = [
       new Keg("Workhorse IPA", "Laurelwood", 5, 7.5),
+      new Keg("Asahi Super Dry", "Asahi", 7, 5),
       new Keg("Mirror Pond", "Deschutes", 4, 6),
       new Keg("Crush Cucumber Sour", "10 Barrel", 6.5, 5),
+      new Keg("Good Morning", "Tree House Brewing Company", 8, 8.4),
+      new Keg("African Amber", "Mac & Jack's", 4, 5.2),
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {
