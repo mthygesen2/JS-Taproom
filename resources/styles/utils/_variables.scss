@@ -13,3 +13,14 @@ $empty-color: #ff3333;
 $header-background: #ffcc80;
 
 $light-grey: #aaa;
+
+
+%button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-family: $heading;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: $low-color;
+}

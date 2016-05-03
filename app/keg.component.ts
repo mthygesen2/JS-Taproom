@@ -10,13 +10,17 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
     directives: [EditKegDetailsComponent],
     template: `
     <div class="kegInfo {{ priceyPintClass }} ">
-    <h3>{{ keg.name + " " + "$" + keg.price}}</h3>
-    <p class="pintInfo {{ lowKegClass }} ">{{ "Pints: " + keg.pints  }}</p>
-    <h4>{{ keg.brand }}</h4>
-    <p>{{ "ABV " + keg.alcoholContent + "%" }}</p>
-    <button (click)="buyPint(keg) ">Buy a pint!</button>
-    <button (click)="editInfo(keg)">Edit</button>
-    <edit-keg-details *ngIf="show" [keg]="selectedKeg"></edit-keg-details>
+        <h3>{{ keg.name + " " + "$" + keg.price}}</h3>
+      <div class="beerInfo">
+        <p class="pintInfo {{ lowKegClass }} ">{{ "Pints: " + keg.pints  }}</p>
+        <h4>{{ keg.brand }}</h4>
+        <p>{{ "ABV " + keg.alcoholContent + "%" }}</p>
+      </div>
+      <div class="buttons">
+        <button (click)="buyPint(keg) ">Buy a pint!</button>
+        <button id="edit" (click)="editInfo(keg)">Edit</button>
+        <edit-keg-details *ngIf="show" [keg]="selectedKeg"></edit-keg-details>
+      </div>
     </div>
      `
 })

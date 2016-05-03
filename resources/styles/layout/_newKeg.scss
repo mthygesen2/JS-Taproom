@@ -5,12 +5,6 @@
   background: $light-grey;
   border: 2px solid black;
   button {
-    width: 100px;
-    height: 40px;
-    border: none;
-    font-family: $heading;
-    border-radius: 8px;
-    margin-top: 20px;
-    background-color: $low-color;
+    @extend %button;
   }
 }

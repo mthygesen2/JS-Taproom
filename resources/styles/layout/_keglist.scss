@@ -1,0 +1,26 @@
+.kegInfo {
+  border: 2px solid black;
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  .beerInfo {
+    width: 60%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    button {
+      @extend %button;
+      margin-right: 10px;
+    }
+    #edit {
+      background-color: white;
+      border: 1px solid $light-grey;
+    }
+
+  }
+}
