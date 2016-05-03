@@ -12,12 +12,14 @@ import { EmptyPipe } from './empty.pipe';
   pipes: [EmptyPipe],
   directives: [KegComponent, NewKegComponent, EditKegDetailsComponent],
   template: `
-  <select (change)="onChange($event.target.value)" class="filter">
-    <option value="all">Kegs with Pints</option>
-    <option value="low">Almost empty kegs</option>
-    <option value="empty">Empty Kegs</option>
-  </select>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
+
+  <select (change)="onChange($event.target.value)" class="filter">
+  <option value="all">Kegs with Pints</option>
+  <option value="low">Almost empty kegs</option>
+  <option value="empty">Empty Kegs</option>
+  </select>
+  
   <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
     [keg]="currentKeg" [priceyPintClass]="isExpensive(currentKeg)" [lowKegClass]="isLow(currentKeg)" >
   </keg-display>

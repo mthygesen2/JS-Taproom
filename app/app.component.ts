@@ -12,6 +12,7 @@ import {Keg} from './keg.model';
         <h1>The Taproom</h1>
         <h3> Welcome to the Taproom. Go ahead and add a new keg to the keg list! Or if you are feeling thirsty, go ahead and buy yourself a pint!</h3>
          <h4>Remember that the expensive pints are listed in a nice marigold color.</h4>
+         <h4>Buy some pints, eventually you will see low kegs in the list along with empty kegs if you buy enough pints.</h4>
       </div>
       <keg-list
         [kegList]="kegs"
