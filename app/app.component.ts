@@ -9,7 +9,7 @@ import {Keg} from './keg.model';
   template: `
     <div class="container">
       <div class="header">
-        <h1>Pint Me</h1>
+        <h1>The Taproom</h1>
         <h3> Welcome to the Taproom. Go ahead and add a new keg to the keg list! Or if you are feeling thirsty, go ahead and buy yourself a pint!</h3>
          <h4>Remember that the expensive pints are listed in a nice marigold color.</h4>
       </div>
