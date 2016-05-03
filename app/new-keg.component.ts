@@ -9,8 +9,9 @@ import {Keg} from './keg.model';
     <h3>New Keg</h3>
     <input placeholder="Name of the Beer" #newName >
     <input placeholder="Beer Brand" #newBrand>
-    <input min="0" step="0.25" type="number" placeholder="Price per pint" #newPrice>
+    <span>$</span><input min="0" step="0.25" type="number" placeholder="Price per pint" #newPrice>
     <input min="0" type="number" placeholder="Alcohol By Volume" #newAlcoholContent>
+    <span>%</span>
 
     <button (click)="addKeg(newName, newBrand, newPrice, newAlcoholContent)">Add Keg</button>
   </div>

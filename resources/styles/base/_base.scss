@@ -5,4 +5,7 @@
 .container {
   font-family: $serif;
   color: $text-color;
+  h3 {
+    font-family: $heading;
+  }
 }
