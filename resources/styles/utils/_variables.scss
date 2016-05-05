@@ -2,18 +2,26 @@ $serif: 'Karla', sans-serif;
 
 $heading: 'Graduate', cursive;
 
+
 $text-color:#330000;
 
 $expensive-color:#ffa31a;
 
 $low-color: #ff6666;
 
+$buy-pint: #86BA90;
+
 $empty-color: #ff3333;
 
-$header-background: #ffcc80;
+$header-background: #271F30;
 
-$light-grey: #aaa;
+$header-text: white;
 
+$light-grey: #FFD972;
+
+%whiteBg {
+  background: rgba(255, 255, 255, 0.8);
+}
 
 %button {
   width: 100px;
@@ -22,5 +30,5 @@ $light-grey: #aaa;
   font-family: $heading;
   border-radius: 8px;
   margin-top: 20px;
-  background-color: $low-color;
+  background-color: $buy-pint;
 }

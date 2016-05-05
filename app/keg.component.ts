@@ -12,8 +12,8 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
     <div class="kegInfo {{ priceyPintClass }} ">
         <h3>{{ keg.name + " " + "$" + keg.price}}</h3>
       <div class="beerInfo">
-        <p class="pintInfo {{ lowKegClass }} ">{{ "Pints: " + keg.pints  }}</p>
         <h4>{{ keg.brand }}</h4>
+        <p class="pintInfo {{ lowKegClass }} ">{{ "Pints: " + keg.pints  }}</p>
         <p>{{ "ABV " + keg.alcoholContent + "%" }}</p>
       </div>
       <div class="buttons">

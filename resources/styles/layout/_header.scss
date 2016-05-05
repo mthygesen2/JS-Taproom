@@ -4,6 +4,10 @@
   padding: 25px;
   text-align: center;
   background-color: $header-background;
+  max-width: 1000px;
+  margin: 0 auto;
+  opacity: 0.7;
+  color: $header-text;
   h1,
   h3 {
     max-width: 600px;

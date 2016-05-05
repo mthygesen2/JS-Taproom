@@ -1,10 +1,13 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 .container {
   font-family: $serif;
   color: $text-color;
+  background: url("/resources/img/beer2.jpg") no-repeat bottom;
+  background-size: cover;
   h3 {
     font-family: $heading;
   }

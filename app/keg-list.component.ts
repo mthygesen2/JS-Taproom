@@ -19,10 +19,11 @@ import { EmptyPipe } from './empty.pipe';
   <option value="low">Almost empty kegs</option>
   <option value="empty">Empty Kegs</option>
   </select>
-  
-  <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
-    [keg]="currentKeg" [priceyPintClass]="isExpensive(currentKeg)" [lowKegClass]="isLow(currentKeg)" >
-  </keg-display>
+  <div class="whole-list">
+    <keg-display *ngFor="#currentKeg of kegList | empty:filterEmpty"
+      [keg]="currentKeg" [priceyPintClass]="isExpensive(currentKeg)" [lowKegClass]="isLow(currentKeg)" >
+    </keg-display>
+  </div>
   `
 })
 export class KegListComponent {
